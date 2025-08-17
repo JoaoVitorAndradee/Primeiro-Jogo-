@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criador de Landing Pages - Método AIDA</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-rocket"></i>
+                <span>AIDA Creator</span>
+            </div>
+            <nav class="nav">
+                <a href="#home" class="nav-link active">Início</a>
+                <a href="#templates" class="nav-link">Templates</a>
+                <a href="#about" class="nav-link">Sobre AIDA</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        Crie Landing Pages <span class="gradient-text">Irresistíveis</span> 
+                        com o Método AIDA
+                    </h1>
+                    <p class="hero-subtitle">
+                        Transforme visitantes em clientes usando a fórmula comprovada: 
+                        <strong>Atenção → Interesse → Desejo → Ação</strong>
+                    </p>
+                    <button class="cta-button" onclick="scrollToBuilder()">
+                        <i class="fas fa-magic"></i>
+                        Criar Minha Landing Page
+                    </button>
+                </div>
+                <div class="hero-visual">
+                    <div class="aida-flow">
+                        <div class="aida-step" data-step="attention">
+                            <div class="step-icon">👀</div>
+                            <h3>Atenção</h3>
+                            <p>Captura a atenção do visitante</p>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="aida-step" data-step="interest">
+                            <div class="step-icon">🧠</div>
+                            <h3>Interesse</h3>
+                            <p>Desperta interesse no produto</p>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="aida-step" data-step="desire">
+                            <div class="step-icon">❤️</div>
+                            <h3>Desejo</h3>
+                            <p>Cria desejo de possuir</p>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="aida-step" data-step="action">
+                            <div class="step-icon">🚀</div>
+                            <h3>Ação</h3>
+                            <p>Leva à ação de compra</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Landing Page Builder -->
+        <section id="builder" class="builder-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Construtor de Landing Page AIDA</h2>
+                    <p>Preencha os campos abaixo para gerar sua landing page personalizada</p>
+                </div>
+
+                <div class="builder-container">
+                    <div class="form-panel">
+                        <form id="aida-form" class="aida-form">
+                            <!-- Attention Section -->
+                            <div class="form-section" data-section="attention">
+                                <h3 class="section-title">
+                                    <span class="section-icon">👀</span>
+                                    Atenção (Attention)
+                                </h3>
+                                <div class="form-group">
+                                    <label for="headline">Título Principal *</label>
+                                    <input type="text" id="headline" name="headline" 
+                                           placeholder="Ex: Dobre Suas Vendas em 30 Dias!" required>
+                                    <small>Use palavras impactantes que chamem atenção imediatamente</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="subheadline">Subtítulo</label>
+                                    <input type="text" id="subheadline" name="subheadline" 
+                                           placeholder="Ex: O método comprovado usado por +10.000 empreendedores">
+                                </div>
+                                <div class="form-group">
+                                    <label for="hero-image">URL da Imagem Principal</label>
+                                    <input type="url" id="hero-image" name="hero-image" 
+                                           placeholder="https://exemplo.com/imagem.jpg">
+                                </div>
+                            </div>
+
+                            <!-- Interest Section -->
+                            <div class="form-section" data-section="interest">
+                                <h3 class="section-title">
+                                    <span class="section-icon">🧠</span>
+                                    Interesse (Interest)
+                                </h3>
+                                <div class="form-group">
+                                    <label for="problem">Problema que Resolve *</label>
+                                    <textarea id="problem" name="problem" rows="3" required
+                                              placeholder="Ex: Você está cansado de ter baixas conversões no seu site? Seus visitantes chegam mas não compram?"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="solution">Solução Oferecida *</label>
+                                    <textarea id="solution" name="solution" rows="3" required
+                                              placeholder="Ex: Nosso método AIDA aumenta suas conversões em até 300% usando técnicas comprovadas de persuasão."></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="benefits">Benefícios (um por linha)</label>
+                                    <textarea id="benefits" name="benefits" rows="4"
+                                              placeholder="Aumento de 300% nas conversões&#10;Método testado e aprovado&#10;Resultados em 30 dias&#10;Suporte completo"></textarea>
+                                </div>
+                            </div>
+
+                            <!-- Desire Section -->
+                            <div class="form-section" data-section="desire">
+                                <h3 class="section-title">
+                                    <span class="section-icon">❤️</span>
+                                    Desejo (Desire)
+                                </h3>
+                                <div class="form-group">
+                                    <label for="testimonials">Depoimentos (separados por ---)</label>
+                                    <textarea id="testimonials" name="testimonials" rows="5"
+                                              placeholder="João Silva: 'Incrível! Minhas vendas triplicaram em apenas 2 meses!'&#10;---&#10;Maria Santos: 'O melhor investimento que já fiz para meu negócio.'"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="social-proof">Prova Social</label>
+                                    <input type="text" id="social-proof" name="social-proof" 
+                                           placeholder="Ex: +10.000 clientes satisfeitos">
+                                </div>
+                                <div class="form-group">
+                                    <label for="guarantee">Garantia</label>
+                                    <textarea id="guarantee" name="guarantee" rows="2"
+                                              placeholder="Ex: Garantia de 30 dias ou seu dinheiro de volta!"></textarea>
+                                </div>
+                            </div>
+
+                            <!-- Action Section -->
+                            <div class="form-section" data-section="action">
+                                <h3 class="section-title">
+                                    <span class="section-icon">🚀</span>
+                                    Ação (Action)
+                                </h3>
+                                <div class="form-group">
+                                    <label for="cta-text">Texto do Botão de Ação *</label>
+                                    <input type="text" id="cta-text" name="cta-text" 
+                                           placeholder="Ex: QUERO AUMENTAR MINHAS VENDAS AGORA!" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="price">Preço</label>
+                                    <input type="text" id="price" name="price" 
+                                           placeholder="Ex: R$ 197,00">
+                                </div>
+                                <div class="form-group">
+                                    <label for="discount">Desconto/Oferta Especial</label>
+                                    <input type="text" id="discount" name="discount" 
+                                           placeholder="Ex: De R$ 497 por apenas R$ 197 (60% OFF)">
+                                </div>
+                                <div class="form-group">
+                                    <label for="urgency">Urgência/Escassez</label>
+                                    <input type="text" id="urgency" name="urgency" 
+                                           placeholder="Ex: Oferta válida apenas até domingo!">
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact-info">Informações de Contato</label>
+                                    <input type="text" id="contact-info" name="contact-info" 
+                                           placeholder="Ex: contato@exemplo.com | (11) 99999-9999">
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn-secondary" onclick="resetForm()">
+                                    <i class="fas fa-undo"></i>
+                                    Limpar Formulário
+                                </button>
+                                <button type="submit" class="btn-primary">
+                                    <i class="fas fa-magic"></i>
+                                    Gerar Landing Page
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="preview-panel">
+                        <div class="preview-header">
+                            <h3>Preview da Landing Page</h3>
+                            <div class="preview-actions">
+                                <button class="btn-icon" onclick="togglePreview()" title="Alternar Preview">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="btn-icon" onclick="downloadHTML()" title="Baixar HTML">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div id="preview-content" class="preview-content">
+                            <div class="preview-placeholder">
+                                <i class="fas fa-magic"></i>
+                                <p>Preencha o formulário para ver o preview da sua landing page</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Templates Section -->
+        <section id="templates" class="templates-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Templates AIDA Prontos</h2>
+                    <p>Use nossos templates pré-configurados como ponto de partida</p>
+                </div>
+                
+                <div class="templates-grid">
+                    <div class="template-card" data-template="ecommerce">
+                        <div class="template-preview">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h3>E-commerce</h3>
+                        <p>Perfeito para vendas de produtos físicos e digitais</p>
+                        <button class="btn-template" onclick="loadTemplate('ecommerce')">
+                            Usar Template
+                        </button>
+                    </div>
+                    
+                    <div class="template-card" data-template="service">
+                        <div class="template-preview">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Serviços</h3>
+                        <p>Ideal para consultores, freelancers e agências</p>
+                        <button class="btn-template" onclick="loadTemplate('service')">
+                            Usar Template
+                        </button>
+                    </div>
+                    
+                    <div class="template-card" data-template="course">
+                        <div class="template-preview">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Curso Online</h3>
+                        <p>Otimizado para vendas de cursos e infoprodutos</p>
+                        <button class="btn-template" onclick="loadTemplate('course')">
+                            Usar Template
+                        </button>
+                    </div>
+                    
+                    <div class="template-card" data-template="app">
+                        <div class="template-preview">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>App/SaaS</h3>
+                        <p>Para aplicativos e softwares como serviço</p>
+                        <button class="btn-template" onclick="loadTemplate('app')">
+                            Usar Template
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About AIDA Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>O que é o Método AIDA?</h2>
+                    <p>Entenda a fórmula de marketing mais eficaz do mundo</p>
+                </div>
+                
+                <div class="aida-explanation">
+                    <div class="aida-detail">
+                        <div class="detail-icon attention">👀</div>
+                        <div class="detail-content">
+                            <h3>Atenção (Attention)</h3>
+                            <p>O primeiro passo é capturar a atenção do seu visitante. Use títulos impactantes, cores chamativas e elementos visuais que façam a pessoa parar e prestar atenção no que você tem a oferecer.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="aida-detail">
+                        <div class="detail-icon interest">🧠</div>
+                        <div class="detail-content">
+                            <h3>Interesse (Interest)</h3>
+                            <p>Após capturar a atenção, você precisa despertar interesse. Apresente o problema que seu produto resolve e mostre como sua solução é única e valiosa para o cliente.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="aida-detail">
+                        <div class="detail-icon desire">❤️</div>
+                        <div class="detail-content">
+                            <h3>Desejo (Desire)</h3>
+                            <p>Agora é hora de criar desejo. Use depoimentos, provas sociais, garantias e benefícios emocionais para fazer o cliente desejar verdadeiramente seu produto.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="aida-detail">
+                        <div class="detail-icon action">🚀</div>
+                        <div class="detail-content">
+                            <h3>Ação (Action)</h3>
+                            <p>Por fim, guie o cliente para a ação desejada. Use calls-to-action claros, crie urgência e facilite ao máximo o processo de compra ou conversão.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <i class="fas fa-rocket"></i>
+                        <span>AIDA Creator</span>
+                    </div>
+                    <p>Criando landing pages que convertem desde 2024</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Links Úteis</h4>
+                    <a href="#templates">Templates</a>
+                    <a href="#about">Sobre AIDA</a>
+                    <a href="#builder">Criar Landing Page</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contato</h4>
+                    <p>contato@aidacreator.com</p>
+                    <p>(11) 99999-9999</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AIDA Creator. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
